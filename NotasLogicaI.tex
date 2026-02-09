@@ -2251,12 +2251,12 @@ Usando la definición de deducción y monotonía se tiene que
 Por otro lado, igual por monotonía y definición de deducción, 
 \(\Gamma\vdash(\neg\alpha)\to((\neg\varphi)\to(\neg\alpha)) \,\,\ldots(4)\).
 
-Análogamente, \(\Gamma\vdash(\alpha)\to((\neg\varphi)\to\alpha) \,\,\ldots(5)\).
-Por \textsf{MMP}(\(5, 1\)), \(\Gamma\vdash(\neg\varphi\to\alpha)\) \(\ldots(6)\).
+Análogamente, \(\Gamma\vdash\alpha\to((\neg\varphi)\to\alpha) \,\,\ldots(5)\).
+Por \textsf{MMP}(\(5, 1\)), \(\Gamma\vdash(\neg\varphi)\to\alpha\) \(\ldots(6)\).
 
 Análogamente, por \textsf{MMP}(\(4, 2\)), se obtiene \(\Gamma\vdash(\neg\varphi)\to(\neg\alpha) \,\,\dots(7)\).
 
-De \textsf{MMP}(\(3, 7\)), \,\,\(\Gamma\vdash(((\neg\varphi)\to\alpha)\to\varphi) \,\,\ldots(8)\).
+De \textsf{MMP}(\(3, 7\)), \,\,\(\Gamma\vdash((\neg\varphi)\to\alpha)\to\varphi \,\,\ldots(8)\).
 Usando \textsf{MMP}(\(8, 6\)), \(\Gamma\vdash\varphi\).
 \end{tcolorbox}
 
