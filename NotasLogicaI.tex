@@ -2232,32 +2232,35 @@ Por monotonía y de la definición de deducción se tiene que \(\Sigma\vdash((\n
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!blue,title=\textbf{Lema}.]
 Sea \(\Gamma\subseteq\overline{L}\).
-\(\Gamma\) es inconsistente si y sólo si existe \(\varphi\in\overline{L}\) tal que \(\Gamma\not\vdash\varphi\).
+\(\Gamma\) es consistente si y sólo si existe \(\varphi\in\overline{L}\) tal que \(\Gamma\not\vdash\varphi\).
 \end{tcolorbox}
 
 \begin{tcolorbox}
 \textit{Prueba}. 
 \tcblower
-\(\boxed{\Rightarrow}\) Supongamos que para toda \(\varphi\in\overline{L}\) se tiene que \(\Gamma\vdash\varphi\). En particular \(\Gamma\vdash P_0\) y \(\Gamma\vdash(\neg P_0)\), entonces \(\Gamma\) es inconsistente.
+\(\boxed{\Rightarrow}\) Supongamos que para toda \(\varphi\in\overline{L}\) se tiene que \(\Gamma\vdash\varphi\). 
 
-\(\boxed{\Leftarrow}\) Supongamos que \(\Gamma\) es inconsistente, es decir, existe \(\alpha\in\overline{L}\) tal que \(\Gamma\vdash\alpha\) y \(\Gamma\vdash\neg\alpha\) \(\dots(ii)\).
+En particular \(\Gamma\vdash P_0\) y \(\Gamma\vdash(\neg P_0)\), entonces \(\Gamma\) es inconsistente.
 
-Sea \(\varphi\in\overline{L}\). P.D. \(\Gamma\vdash\varphi\).
+\(\boxed{\Leftarrow}\) Supongamos que \(\Gamma\) es inconsistente, es decir, existe \(\alpha\in\overline{L}\) tal que 
+\(\Gamma\vdash\alpha \,\,\ldots(1)\) y \(\Gamma\vdash\neg\alpha \,\,\ldots(2)\).
 
-Usando la definición de deducción y monotonía se tiene que \(\Gamma\vdash\)
-
+Sea \(\varphi\in\overline{L}\). \textsf{P.D.} \(\Gamma\vdash\varphi\).
+Usando la definición de deducción y monotonía se tiene que 
+    \(\Gamma\vdash((\neg\varphi)\to(\neg\alpha))\to(((\neg\varphi)\to\alpha)\to\varphi) \,\,\ldots(3)\).
 Por otro lado, igual por monotonía y definición de deducción, 
+\(\Gamma\vdash(\neg\alpha)\to((\neg\varphi)\to(\neg\alpha)) \,\,\ldots(4)\).
 
-Análogamente, 
+Análogamente, \(\Gamma\vdash(\alpha)\to((\neg\varphi)\to\alpha) \,\,\ldots(5)\).
+Por \textsf{MMP}(\(5, 1\)), \(\Gamma\vdash(\neg\varphi\to\alpha)\) \(\ldots(6)\).
 
-Por \textsf{MMP}(\(i, \star\star\)), \(\Gamma\vdash(\neg\varphi\to\alpha)\).
-Análogamente \(\Gamma\vdash(\neg\varphi\to(\neg\alpha))\), \textsf{MMP}(\(ii, \star\star\))
+Análogamente, por \textsf{MMP}(\(4, 2\)), se obtiene \(\Gamma\vdash(\neg\varphi)\to(\neg\alpha) \,\,\dots(7)\).
 
-De \textsf{MMP}(\(iii, \star\star\star\star\)), \(\Gamma\vdash((\neg\varphi)\to\alpha)\to\varphi\)
-
-Usando \textsf{MMP}(\(iv, \star\star\star\)), \(\Gamma\vdash\varphi\).
+De \textsf{MMP}(\(3, 7\)), \,\,\(\Gamma\vdash(((\neg\varphi)\to\alpha)\to\varphi) \,\,\ldots(8)\).
+Usando \textsf{MMP}(\(8, 6\)), \(\Gamma\vdash\varphi\).
 \end{tcolorbox}
 
+% \newpage
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!blue,title=\textbf{Lema}.]
 \(\Gamma\not\vdash\varphi\) si y sólo si \(\Gamma\cup\{\neg\varphi\}\) es consistente.
 \end{tcolorbox}
@@ -2319,7 +2322,7 @@ Por lo tanto \(\Sigma\) es inconsistente.
     \[\aleph_0=|L|\leq|\overline{L}|\leq|\mathcal{L}_{L}^{*}|=|\displaystyle\bigcup_{n\in\mathbb{N}}\mathcal{L}_{L}^{n}|=\aleph_0\]
 \end{tcolorbox}
 
-\newpage
+% \newpage
 %Lindenbaum
 % \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!blue,title=\textbf{Lema}.]
 % Sea \(\Sigma\subseteq\overline{L}\) y \(\alpha\in\overline{L}\).
